@@ -13,7 +13,7 @@ COPY config_manifest /etc/config_manifest
 COPY allowed_variables /etc/allowed_variables
 COPY config_template_processor.sh /usr/bin/config_template_processor.sh
 
-EXPOSE 12900
+EXPOSE 9000
 
 ENTRYPOINT ["/usr/bin/config_template_processor.sh"]
 
