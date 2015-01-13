@@ -2,12 +2,11 @@ FROM dockerfile/java
 
 ENV GRAYLOG2_VERSION 0.92.3
 
-RUN curl -L "http://packages.graylog2.org/releases/graylog2-web/graylog2-web-${GRAYLOG2_VERSION}.tgz" | tar -zx -C /opt/
+RUN curl -L "http://packages.graylog2.org/releases/graylog2-webinterface/graylog2-web-interface-${GRAYLOG2_VERSION}.tgz" | tar -zx -C /opt/
 
-WORKDIR /opt/graylog2-web-${GRAYLOG2_VERSION}/
+WORKDIR /opt/graylog2-web-interface-${GRAYLOG2_VERSION}/
 
-RUN ln -sf /opt/graylog2-web-${GRAYLOG2_VERSION}/ /opt/graylog2-web
-RUN cp /opt/graylog2-web/graylog2.conf.example /etc/graylog2.conf
+RUN ln -sf /opt/graylog2-web-interface-${GRAYLOG2_VERSION}/ /opt/graylog2-web
 
 COPY graylog2-web-interface.conf /opt/graylog2-web/conf/graylog2-web-interface.conf
 COPY config_manifest /etc/config_manifest
